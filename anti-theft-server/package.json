@@ -1,0 +1,52 @@
+{
+  "name": "character-card-anti-theft-server",
+  "version": "1.0.0",
+  "description": "SillyTavern 角色卡防盗系统 - 云服务器后端",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "db:init": "node scripts/init-db.js",
+    "db:test": "node scripts/test-db-connection.js",
+    "db:verify-indexes": "node scripts/verify-indexes.js",
+    "db:optimize": "node scripts/optimize-queries.js",
+    "validate:env": "node scripts/validate-env.js",
+    "audit": "npm audit --audit-level=moderate",
+    "audit:fix": "npm audit fix",
+    "audit:report": "npm audit --json > audit-report.json",
+    "verify:deps": "node scripts/verify-dependencies.js",
+    "preinstall": "node -e \"if(process.env.npm_config_package_lock === 'false') { console.error('package-lock.json is required'); process.exit(1); }\""
+  },
+  "keywords": [
+    "sillytavern",
+    "character-card",
+    "anti-theft",
+    "password-protection"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "compression": "1.8.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "etag": "1.8.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.22.0",
+    "winston": "^3.19.0",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
+  }
+}
